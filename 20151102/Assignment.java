@@ -26,8 +26,13 @@ public class Assignment {
          }
       }
       
-      double d = (pow(e,-1) % phi_N);
-      System.out.println("p:"+p+" q:"+q+" e:"+e+" d:"+d);
+      /*
+         Don't quite get the formula:
+            e^(-1) % phi(N)
+         e^(-1) < 1, so not sure what modding it with phi(N) should produce
+      */
+      double d = (pow(e,-1l) % phi_N);
+      System.out.println("p:"+p+" q:"+q+" phi_N:"+phi_N+" e:"+e+" d:"+d+" pow(e,-1l):"+pow(e,-1l));
    }
    
    static boolean isPrime(Long n) {
