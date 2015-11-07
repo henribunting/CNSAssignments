@@ -51,7 +51,7 @@ public class Assignment1 {
             throw new IllegalArgumentException("Invalid argument(s): Not prime");
 
         int N = p * q;
-        int phi_N = (p - 1) + (q * 1);
+        int phi_N = (p - 1) * (q - 1);
         int e = findE(phi_N);
         // TODO: Have to work out the correct formula for d
         double d = Math.pow(e, -1) % phi_N;
