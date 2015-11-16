@@ -20,6 +20,7 @@ public class ModExp {
     // loop over every bit in k
     for (int i = 0; i < k.length; i ++) {
 
+      // for every bit, i.e. if 0 or 1, do this
       c *= 2;
       f = (f * f) % n;
 
