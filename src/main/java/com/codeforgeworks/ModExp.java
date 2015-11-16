@@ -8,7 +8,7 @@ import org.apache.commons.math3.analysis.function.Pow;
 
 import static java.lang.Math.pow;
 
-public class ModularExponentiation {
+public class ModExp {
 
   // determine if a^b mod n = 1
   private static int modExp(int a, int b, int n) {
