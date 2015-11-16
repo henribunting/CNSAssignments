@@ -7,6 +7,7 @@ import org.apache.commons.math3.random.RandomDataGenerator;
 import org.apache.commons.math3.analysis.function.Pow;
 
 // Modular Exponentiation
+// Using Square and multiply algorithm
 public class ModExp {
 
   // determine if a^b mod n = 1
