@@ -21,6 +21,8 @@ public class PrimeFinder {
     if (n < 2 && n % 2 != 1) return false;
 
     // Determine p and q from n
+    // make q = n - 1, if divisible equally by 2, then do it and increment 
+    // p by one. Repeat until q is not divisible by 2 (i.e. a remainer)
     long k = 0, q = n - 1;
     while(true) {
       if (q % 2 != 0) {
