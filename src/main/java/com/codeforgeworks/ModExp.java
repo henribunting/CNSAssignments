@@ -8,6 +8,19 @@ import org.apache.commons.math3.analysis.function.Pow;
 
 // Modular Exponentiation
 // Using Square and multiply algorithm
+
+/* In mathematics and computer programming, exponentiating by 
+    squaring is a general method for fast computation of large 
+    positive integer powers of a number, or more generally of 
+    an element of a semigroup, like a polynomial or a square 
+    matrix. Some variants are commonly referred to as 
+    square-and-multiply algorithms or binary exponentiation. 
+    These can be of quite general use, for example in modular 
+    arithmetic or powering of matrices. For semigroups for which 
+    additive notation is commonly used, like elliptic curves used 
+    in cryptography, this method is also referred to as 
+    double-and-add.
+*/
 public class ModExp {
 
   // determine if a^b mod n = 1
