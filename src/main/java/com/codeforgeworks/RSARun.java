@@ -21,11 +21,10 @@ public class RSARun {
 
   // Method to find random encryption key e
   private static BigInteger findE(BigInteger phi_N) {
-    Random r = new Random();
     while (true) {
       // aka. long testE = r.nextLong() * (phi_N - 1)
-      BigInteger testE = (new BigInteger(2, new Random())).multiply(phi_N.subtract(new BigInteger("1")));
-      if (gcd(testE, phi_N).compareTo(new BigInteger("1")) == 1)
+      BigInteger testE = (new BigInteger(8, new Random())).multiply(phi_N.subtract(new BigInteger("1")));
+      if (gcd(testE, phi_N).compareTo(new BigInteger("1")) == 0)
         return testE;
     }
   }
@@ -75,9 +74,6 @@ public class RSARun {
     BigInteger p = new BigInteger("5");
     BigInteger q = new BigInteger("11");
 
-    // Select random encryption key -> e
-    BigInteger e = new BigInteger("3");
-
     // The message to encrypt
     BigInteger message = new BigInteger("9");
 
@@ -87,12 +83,16 @@ public class RSARun {
     // Compute phi of N
     BigInteger phiN = findPhiOfN(p, q);
 
+    // Select random encryption key -> e
+    //BigInteger e = new BigInteger("3");
+    BigInteger e = findE(phiN);
+
     BigInteger phiPhiN = totient(phiN, new BigInteger("2"), BigInteger.ZERO);
 
     // Solve for encryption key d
     BigInteger d = modExp(e, phiPhiN.subtract(new BigInteger("1")), phiN); 
 
-    System.out.println("N: " + N + " phi_N: " + phiN + " phiPhiN: " + phiPhiN + " d: " + d);
+    System.out.println("N: " + N + " phi_N: " + phiN + " e: " + e + " phiPhiN: " + phiPhiN + " d: " + d);
 
     // create the public plus private key
     Tuple2<BigInteger, BigInteger> publicKey = new Tuple2<>(e, N);
